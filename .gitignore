@@ -3,6 +3,7 @@
 .idea/
 __pycache__/
 *.py[cod]
+storage/
 
 .pytest_cache/
 .mypy_cache/
