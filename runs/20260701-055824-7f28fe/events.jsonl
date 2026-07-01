@@ -1,0 +1,18 @@
+{"type": "run.started", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:24.320052+00:00", "goal": "heelloo"}
+{"type": "agent.node.started", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:24.320944+00:00", "node": "planner_node"}
+{"type": "agent.log", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:27.957397+00:00", "source": "planner_node", "message": "initial plan created", "extra": {"planner_mode": "initial", "plan_revision": 1, "step_count": 1}}
+{"type": "agent.node.finished", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:27.957617+00:00", "node": "planner_node", "status": "running", "phase": "planning"}
+{"type": "agent.node.started", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:27.957893+00:00", "node": "select_next_step_node"}
+{"type": "agent.log", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:27.958019+00:00", "source": "select_next_step_node", "message": "next pending step selected", "extra": {"current_step_index": 0, "current_step_id": "step_1"}}
+{"type": "agent.node.finished", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:27.958093+00:00", "node": "select_next_step_node", "status": "running", "phase": "selecting_step"}
+{"type": "agent.step.started", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:27.958162+00:00", "step_id": "step_1", "task": "Respond to the user's greeting 'heelloo' appropriately."}
+{"type": "agent.node.started", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:27.958213+00:00", "node": "agent_loop_node"}
+{"type": "agent.loop.thought", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:30.268465+00:00", "step_id": "step_1", "turn": 1, "decision": "finish", "signal": "none", "tool": "none", "thought": "The user has simply greeted me with 'heelloo'. No computation, time, weather, or document retrieval is needed. A direct friendly response is appropriate."}
+{"type": "agent.log", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:30.268692+00:00", "source": "agent_loop_node", "message": "step agent loop completed", "extra": {"current_step_id": "step_1", "agent_loop_turn_count": 1}}
+{"type": "agent.node.finished", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:30.268794+00:00", "node": "agent_loop_node", "status": "running", "phase": "reacting"}
+{"type": "agent.step.finished", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:30.268887+00:00", "step_id": "step_1", "result": "Hello! How can I help you today?"}
+{"type": "agent.node.started", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:30.268914+00:00", "node": "select_next_step_node"}
+{"type": "agent.log", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:30.269020+00:00", "source": "select_next_step_node", "message": "no pending step found", "extra": {}}
+{"type": "agent.node.finished", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:30.269090+00:00", "node": "select_next_step_node", "status": "running", "phase": "selecting_step"}
+{"type": "agent.answer", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:31.985651+00:00", "answer": "Hello! How can I help you today?"}
+{"type": "run.finished", "run_id": "20260701-055824-7f28fe", "ts": "2026-07-01T05:58:31.985780+00:00", "status": "finished", "answer": "Hello! How can I help you today?", "error": null}

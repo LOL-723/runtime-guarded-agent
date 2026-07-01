@@ -1,3 +1,4 @@
+import argparse
 from typing import Callable
 
 from cli.formatting import format_ping_reply
@@ -39,6 +40,26 @@ def shutdown_command(argv: list[str]) -> int:
     return 0
 
 
+def run_command(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(prog="sorrow run")
+    parser.add_argument("goal", nargs="+")
+    args = parser.parse_args(argv)
+    goal = " ".join(args.goal).strip()
+
+    from core.llm.Agent.AgentRuner import AgentRuner, StdoutPrinter
+
+    printer = StdoutPrinter()
+    runner = AgentRuner(extra_handlers=[printer.handle])
+    try:
+        runner.run(goal)
+    except KeyboardInterrupt:
+        return 130
+    except Exception as exc:
+        print(f"Agent run failed: {exc}", flush=True)
+        return 1
+    return 0
+
+
 def _format_seconds(uptime_ms: object) -> str:
     try:
         return f"{float(uptime_ms) / 1000:.1f}s"
@@ -48,5 +69,6 @@ def _format_seconds(uptime_ms: object) -> str:
 
 COMMANDS: dict[str, CommandHandler] = {
     "ping": ping_command,
+    "run": run_command,
     "shutdown": shutdown_command,
 }

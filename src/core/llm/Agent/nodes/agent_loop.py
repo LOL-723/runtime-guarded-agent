@@ -48,7 +48,8 @@ def agent_loop_node(state: AgentState) -> AgentState:
                 arguments=decision["arguments"],
                 answer=decision["answer"],
             ).model_dump()
-            _print_agent_thought_trace(
+            _emit_agent_thought_trace(
+                state=state,
                 step_id=step_id,
                 turn_index=turn_index,
                 decision=decision,
@@ -353,6 +354,28 @@ def _print_agent_thought_trace(
         f"tool={tool_name}\n"
         f"{decision.get('thought', '')}",
         flush=True,
+    )
+
+
+def _emit_agent_thought_trace(
+    state: AgentState,
+    step_id: str,
+    turn_index: int,
+    decision: dict[str, Any],
+) -> None:
+    observer = state.get("_event_callback")
+    if not callable(observer):
+        return
+    observer(
+        {
+            "type": "agent.loop.thought",
+            "step_id": step_id,
+            "turn": turn_index,
+            "decision": decision.get("decide_type"),
+            "signal": decision.get("Signal") or "none",
+            "tool": decision.get("tool_name") or "none",
+            "thought": decision.get("thought", ""),
+        }
     )
 
 

@@ -1,0 +1,18 @@
+{"type": "run.started", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:34.834757+00:00", "goal": "heelloo"}
+{"type": "agent.node.started", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:34.835330+00:00", "node": "planner_node"}
+{"type": "agent.log", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:38.868611+00:00", "source": "planner_node", "message": "initial plan created", "extra": {"planner_mode": "initial", "plan_revision": 1, "step_count": 1}}
+{"type": "agent.node.finished", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:38.868682+00:00", "node": "planner_node", "status": "running", "phase": "planning"}
+{"type": "agent.node.started", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:38.868824+00:00", "node": "select_next_step_node"}
+{"type": "agent.log", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:38.868888+00:00", "source": "select_next_step_node", "message": "next pending step selected", "extra": {"current_step_index": 0, "current_step_id": "step_1"}}
+{"type": "agent.node.finished", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:38.868916+00:00", "node": "select_next_step_node", "status": "running", "phase": "selecting_step"}
+{"type": "agent.step.started", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:38.868938+00:00", "step_id": "step_1", "task": "回应用户的问候，使用友好问候语。"}
+{"type": "agent.node.started", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:38.870189+00:00", "node": "agent_loop_node"}
+{"type": "agent.loop.thought", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:40.979129+00:00", "step_id": "step_1", "turn": 1, "decision": "finish", "signal": "none", "tool": "none", "thought": "用户说了 'heelloo'，这是一个问候。当前步骤任务是回应用户的问候，使用友好问候语。不需要调用工具，直接完成步骤。"}
+{"type": "agent.log", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:40.979267+00:00", "source": "agent_loop_node", "message": "step agent loop completed", "extra": {"current_step_id": "step_1", "agent_loop_turn_count": 1}}
+{"type": "agent.node.finished", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:40.979299+00:00", "node": "agent_loop_node", "status": "running", "phase": "reacting"}
+{"type": "agent.step.finished", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:40.979326+00:00", "step_id": "step_1", "result": "你好！有什么可以帮你的吗？😊"}
+{"type": "agent.node.started", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:40.979347+00:00", "node": "select_next_step_node"}
+{"type": "agent.log", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:40.979370+00:00", "source": "select_next_step_node", "message": "no pending step found", "extra": {}}
+{"type": "agent.node.finished", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:40.979387+00:00", "node": "select_next_step_node", "status": "running", "phase": "selecting_step"}
+{"type": "agent.error", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:42.899722+00:00", "error": "'gbk' codec can't encode character '\\U0001f60a' in position 13: illegal multibyte sequence"}
+{"type": "run.finished", "run_id": "20260701-055534-b4b738", "ts": "2026-07-01T05:55:42.899772+00:00", "status": "finished", "answer": "你好！有什么可以帮你的吗？😊", "error": "'gbk' codec can't encode character '\\U0001f60a' in position 13: illegal multibyte sequence"}
